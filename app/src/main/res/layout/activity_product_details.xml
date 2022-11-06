@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".ProductDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.1"
+        android:background="@color/lightGray"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/proTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size10dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/proRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:layout_marginRight="@dimen/size10dp"
+            android:layout_toStartOf="@+id/imgRating"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/size10dp"
+            android:src="@drawable/ic_star" />
+
+    </RelativeLayout>
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imgSlider"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        app:iss_title_background="@android:color/transparent"
+        app:iss_selected_dot="@drawable/default_selected_dot"
+        app:iss_period="1000"
+        app:iss_unselected_dot="@drawable/default_unselected_dot"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:background="@color/lightGray"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/proPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size15dp"
+            android:layout_marginTop="@dimen/size10dp"
+            android:layout_marginRight="@dimen/size15dp"
+            android:layout_marginBottom="@dimen/size6dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt16sp" />
+
+        <TextView
+            android:id="@+id/proDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size15dp"
+            android:layout_marginRight="@dimen/size15dp"
+            android:layout_marginBottom="@dimen/size6dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt16sp" />
+
+        <TextView
+            android:id="@+id/txtProfileEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size15dp"
+            android:layout_marginTop="@dimen/size6dp"
+            android:background="@drawable/oval_button"
+            android:paddingLeft="@dimen/size20dp"
+            android:paddingTop="8dp"
+            android:paddingRight="@dimen/size20dp"
+            android:paddingBottom="8dp"
+            android:text="Book Now"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>
