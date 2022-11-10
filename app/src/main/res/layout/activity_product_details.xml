@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/size10dp"
+            android:layout_marginStart="@dimen/margin10dp"
             android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/txt18sp"
@@ -32,8 +32,8 @@
             android:id="@+id/proRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size10dp"
-            android:layout_marginRight="@dimen/size10dp"
+            android:layout_marginLeft="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin10dp"
             android:layout_toStartOf="@+id/imgRating"
             android:text=""
             android:textColor="@color/white"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="@dimen/size10dp"
+            android:layout_marginRight="@dimen/margin10dp"
             android:src="@drawable/ic_star" />
 
     </RelativeLayout>
@@ -72,10 +72,10 @@
             android:id="@+id/proPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size15dp"
-            android:layout_marginTop="@dimen/size10dp"
-            android:layout_marginRight="@dimen/size15dp"
-            android:layout_marginBottom="@dimen/size6dp"
+            android:layout_marginLeft="@dimen/margin15dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin15dp"
+            android:layout_marginBottom="@dimen/margin6dp"
             android:textColor="@color/white"
             android:textSize="@dimen/txt16sp" />
 
@@ -83,9 +83,9 @@
             android:id="@+id/proDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size15dp"
-            android:layout_marginRight="@dimen/size15dp"
-            android:layout_marginBottom="@dimen/size6dp"
+            android:layout_marginLeft="@dimen/margin15dp"
+            android:layout_marginRight="@dimen/margin15dp"
+            android:layout_marginBottom="@dimen/margin6dp"
             android:textColor="@color/white"
             android:textSize="@dimen/txt16sp" />
 
@@ -93,8 +93,8 @@
             android:id="@+id/txtProfileEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size15dp"
-            android:layout_marginTop="@dimen/size6dp"
+            android:layout_marginLeft="@dimen/margin15dp"
+            android:layout_marginTop="@dimen/margin6dp"
             android:background="@drawable/oval_button"
             android:paddingLeft="@dimen/size20dp"
             android:paddingTop="8dp"
@@ -102,7 +102,7 @@
             android:paddingBottom="8dp"
             android:text="Book Now"
             android:textColor="@color/white"
-            android:textSize="@dimen/size12dp"
+            android:textSize="@dimen/margin12dp"
             android:visibility="visible" />
     </LinearLayout>
 

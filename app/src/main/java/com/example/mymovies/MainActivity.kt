@@ -1,5 +1,6 @@
 package com.example.mymovies
 
+import NoInternet
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -12,6 +13,7 @@ import com.example.mymovies.adapter.AdapterProductList
 import com.example.mymovies.api.ProductService
 import com.example.mymovies.api.RetrofitHelper
 import com.example.mymovies.repository.ProductRepository
+import com.example.mymovies.utilities.Utility
 import com.example.mymovies.viewmodels.MainViewModel
 import com.example.mymovies.viewmodels.MainViewModelFactory
 import kotlinx.coroutines.Dispatchers
@@ -21,35 +23,52 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var adapter: AdapterProductList
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerView: RecyclerView = findViewById(R.id.productList)
+        recyclerView = findViewById(R.id.productList)
         recyclerView!!.setHasFixedSize(true)
-        val manager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
 
         val productService = RetrofitHelper.getInstance().create(ProductService::class.java)
         val repository = ProductRepository(productService)
 
-        GlobalScope.launch(Dispatchers.IO) { repository.getProducts() }
+        if (Utility.checkInternetConnection(this)) {
+            GlobalScope.launch(Dispatchers.IO) { repository.getProducts() }
+            mainViewModel = ViewModelProvider(
+                this, MainViewModelFactory(repository)
+            )[MainViewModel::class.java]
 
-        mainViewModel =
-            ViewModelProvider(this, MainViewModelFactory(repository)).get(MainViewModel::class.java)
+            setAdapterData();
+        } else {
+            val dialog =
+                NoInternet(
+                    this,
+                    R.style.RoundCornerAlertDialog,
+                    "Alert",
+                    getString(R.string.no_internet)
+                )
+            dialog.show()
+            dialog.onCloseClicked {
+                dialog.dismiss();
+            };
+        }
+    }
 
+    private fun setAdapterData() {
         mainViewModel.products.observe(this, Observer { products ->
             if (products != null) {
                 adapter = AdapterProductList(this, products.products)
                 recyclerView.adapter = adapter
+                val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
                 recyclerView.layoutManager = manager
 
-                adapter.onItemClick = { contact ->
+                adapter.onItemClick = { data ->
 
                     val bundle = Bundle()
-                    bundle.putSerializable("productInfo", contact)
+                    bundle.putSerializable("productInfo", data)
                     val intent = Intent(this@MainActivity, ProductDetailsActivity::class.java)
                     intent.putExtras(bundle)
                     startActivity(intent)
@@ -58,6 +77,5 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(baseContext, "not getting data", Toast.LENGTH_SHORT).show()
             }
         })
-
     }
 }

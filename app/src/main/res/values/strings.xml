@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyMovies</string>
     <string name="Rs">\u20B9</string>
+    <string name="no_internet">Internet not available, Cross check your internet connectivity and try again</string>
 </resources>

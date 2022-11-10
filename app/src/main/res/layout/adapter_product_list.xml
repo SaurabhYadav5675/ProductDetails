@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/size10dp"
+    android:layout_margin="@dimen/margin10dp"
     android:background="@color/white"
     android:elevation="@dimen/elevation5dp">
 
@@ -16,16 +16,16 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:padding="@dimen/size10dp"
+            android:padding="@dimen/margin10dp"
             android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginStart="@dimen/size12dp"
+            android:layout_marginStart="@dimen/margin12dp"
             android:layout_marginTop="6dp"
-            android:layout_marginEnd="@dimen/size12dp"
+            android:layout_marginEnd="@dimen/margin12dp"
             android:layout_marginBottom="@dimen/txt16sp"
             android:layout_toEndOf="@+id/productThumb"
             android:orientation="vertical">
@@ -42,7 +42,7 @@
                 android:id="@+id/productDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size6dp"
+                android:layout_marginTop="@dimen/margin6dp"
                 android:text=""
                 android:textColor="@color/black"
                 android:textSize="@dimen/txt12sp" />
@@ -51,7 +51,7 @@
                 android:id="@+id/productPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size6dp"
+                android:layout_marginTop="@dimen/margin6dp"
                 android:text=""
                 android:textColor="@color/black"
                 android:textSize="@dimen/txt14sp" />

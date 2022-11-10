@@ -2,10 +2,13 @@
 <resources>
     <dimen name="elevation5dp">5dp</dimen>
 
-    <dimen name="size6dp">6dp</dimen>
-    <dimen name="size10dp">10dp</dimen>
-    <dimen name="size12dp">12dp</dimen>
-    <dimen name="size15dp">15dp</dimen>
+    <dimen name="margin6dp">6dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin12dp">12dp</dimen>
+    <dimen name="margin15dp">15dp</dimen>
+    <dimen name="margin20dp">20dp</dimen>
+    <dimen name="margin30dp">30dp</dimen>
 
 
     <dimen name="txt12sp">12sp</dimen>
